@@ -12,15 +12,15 @@ exports.GetChar = function ( name, response ) {
     };
     rp(options)
         .then(($) => {
-            // See if redirected or still on search page by checking for element on search page
+            // See if redirected or still on search pagege
             let url = $("h1:contains('Browse characters')").html();
-            if (url === 'undefined' || url === null) {
+            if (url === 'undefined' || url === null) { // Check for element that only exits on search page
                 // Redirected
                 apParse.parse($, response)
             } else {
-                // Still on search page so go to first result
-                let url = "https://www.anime-planet.com" + $( ".name" ).first().attr('href');
-                const options = {
+                // Still on search page
+                let url = "https://www.anime-planet.com" + $( ".name" ).first().attr('href'); // Set url to the first character link we find
+                const options = { // Change url
                     uri: url,
                     transform: function (body) {
                         return cheerio.load(body);
@@ -32,4 +32,4 @@ exports.GetChar = function ( name, response ) {
                     })
             }
         })
-}
+};

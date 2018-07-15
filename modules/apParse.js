@@ -1,13 +1,10 @@
-const rp = require('request-promise');
-const cheerio = require('cheerio');
-
 exports.parse = function ( $, response ) {
     console.log("Parsing");
     let tags = [];
-    $('.tags ul li').each(function () {
+    $('.tags ul li').each(function () { // Grab Tags first and make a nice array
         tags.push($(this).text())
     });
-    let json = JSON.stringify({
+    let json = JSON.stringify({ // Grab elements from character page and set to json
         name: $("h1[itemprop=name]").text(),
         gender: $("div:contains('Gender:') .pure-1").html().split(":").pop(),
         image: "http://www.anime-planet.com" + $(".screenshots").attr('src'),
@@ -18,4 +15,4 @@ exports.parse = function ( $, response ) {
     });
     console.log("Responding");
     response.end(json);
-}
+};
