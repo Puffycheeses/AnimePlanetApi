@@ -8,6 +8,7 @@ Here is how I run it on my server, Steps might differ but this should work:
 4. Run on server: `pm2 start app.js --name animePlanetServer`
 
 ##Usage
+
 You can access the API on port `3300`
  
 **GET Request:** `http://yourserver.com:3300/?character=name`  
