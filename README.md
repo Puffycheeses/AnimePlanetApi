@@ -1,4 +1,4 @@
-# Anime Planet API
+# Anime Planet Character API
 This is not an official api, I created it to streamline a discord bot I am working on.
 
 Here is how I run it on my server, Steps might differ but this should work:
