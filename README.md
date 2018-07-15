@@ -7,7 +7,7 @@ Here is how I run it on my server, Steps might differ but this should work:
 3. Install Dependencies: `npm i -S request request-promise cheerio`
 4. Run on server: `pm2 start app.js --name animePlanetServer`
 
-##Usage
+## Usage
 
 You can access the API on port `3300`
  
