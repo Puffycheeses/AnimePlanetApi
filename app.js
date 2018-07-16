@@ -7,6 +7,7 @@ const server = http.createServer((request, response) => {
     response.writeHead(200, {'Content-Type': 'application/json', "X-Content-Type-Options": "nosniff", "X-Frame-Options": "deny", "Content-Security-Policy": "default-src 'none'"});
     if (request.method === 'POST') {
         read.collectRequestData(request, result => {
+            /** @namespace result.character */
             apGet.GetChar(result.character, response);
         });
     } else { // For get request
