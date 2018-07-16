@@ -18,4 +18,4 @@ const server = http.createServer((request, response) => {
         }
     }
 });
-server.listen(3300); // Change the port if you want ¯\_(ツ)_/¯
+server.listen(3300, "0.0.0.0"); // Change the port if you want ¯\_(ツ)_/¯
