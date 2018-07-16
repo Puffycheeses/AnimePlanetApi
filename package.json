@@ -14,7 +14,6 @@
     "morgan": "~1.9.0",
     "pug": "2.0.0-beta11",
     "request": "^2.87.0",
-    "request-promise": "^4.2.2",
-    "vertx3-full": "^3.5.3"
+    "request-promise": "^4.2.2"
   }
 }
