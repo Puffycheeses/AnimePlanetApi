@@ -5,7 +5,8 @@ Here is how I run it on my server, Steps might differ but this should work:
 1. Download: `git clone https://github.com/Puffycheeses/AnimePlanetApi.git`
 2. `cd AnimePlanetApi`
 3. Install Dependencies: `npm i -S request request-promise cheerio`
-4. Run on server: `pm2 start app.js --name animePlanetServer`
+4. Open Firewall: `sudo ufw allow 3300`, `sudo ufw enable`
+5. Run on server: `pm2 start app.js --name animePlanetServer`
 
 ## Usage
 
