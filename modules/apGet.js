@@ -19,7 +19,7 @@ exports.GetChar = function ( name, response ) {
                 apParse.parse($, response)
             } else {
                 // Still on search page
-                let url = "https://www.anime-planet.com" + $( ".name" ).first().attr('href'); // Set url to the first character link we find
+                let url = `https://www.anime-planet.com${$( ".name" ).first().attr('href')}`; // Set url to the first character link we find
                 const options = { // Change url
                     uri: url,
                     transform: function (body) {
