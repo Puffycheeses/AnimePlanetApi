@@ -12,6 +12,7 @@ exports.GetChar = function ( name, response ) {
     };
     rp(options)
         .then(($) => {
+            if ($("p:contains('No results found')").length > 0) return apParse.error(name, response); // Make this less toxic
             // See if redirected or still on search pagege
             let url = $("h1:contains('Browse characters')").html();
             if (url === 'undefined' || url === null) { // Check for element that only exits on search page
@@ -28,7 +29,7 @@ exports.GetChar = function ( name, response ) {
                 };
                 rp(options)
                     .then(($) => {
-                        apParse.parse($, response)
+                            apParse.parse($, response)
                     })
             }
         })

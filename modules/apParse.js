@@ -24,3 +24,17 @@ exports.parse = function ( $, response ) {
     console.log("Responding");
     response.end(json);
 };
+
+exports.error = function ( name, response ) {
+    let json = JSON.stringify({ // Grab elements from character page and set to json
+        error: true,
+        name: name,
+        gender: "?",
+        image: "http://www.bsmc.net.au/wp-content/uploads/No-image-available.jpg",
+        rank: "?",
+        anime: [["?", "https://www.anime-planet.com/anime/nichijou"]], // lmao
+        tags: "?"
+    });
+    console.log("Error could not find");
+    response.end(json);
+};
