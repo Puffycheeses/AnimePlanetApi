@@ -16,14 +16,34 @@ You can access the API on port `3300`
 **POST Request:** key of `character` and a value of a name
 
 A usual response will look something like this: 
-```
+```json
 {
     "name": "Yuuko AIOI",
     "gender": " Female ",
     "image": "http://www.anime-planet.com/images/characters/yuuko-aioi-23712.jpg?t=1513400467",
     "rank": "1,137",
-    "anime": "Nichijou",
-    "animeUrl": "http://www.anime-planet.com/anime/nichijou",
+    "anime": [
+        [
+            "Nichijou",
+            "http://www.anime-planet.com/anime/nichijou"
+        ],
+        [
+            "Nichijou Episode 0",
+            "http://www.anime-planet.com/anime/nichijou-episode-0"
+        ],
+        [
+            "Nichijou Specials",
+            "http://www.anime-planet.com/anime/nichijou-specials"
+        ],
+        [
+            "Helvetica Standard",
+            "http://www.anime-planet.com/manga/helvetica-standard"
+        ],
+        [
+            "Nichijou: My Ordinary Life",
+            "http://www.anime-planet.com/manga/nichijou-my-ordinary-life"
+        ]
+    ],
     "tags": [
         "Teenagers",
         "Rosy Cheeks",
