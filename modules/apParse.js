@@ -14,6 +14,7 @@ exports.parse = function ( $, response ) {
     });
 
     let json = JSON.stringify({ // Grab elements from character page and set to json
+        error: false,
         name: $("h1[itemprop=name]").text(),
         gender: $("div:contains('Gender:') .pure-1").html().split(":").pop(),
         image: "http://www.anime-planet.com" + $(".screenshots").attr('src'),
