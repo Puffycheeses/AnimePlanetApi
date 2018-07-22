@@ -3,7 +3,6 @@ const cheerio = require('cheerio');
 const apParse = require('./apParse');
 
 exports.GetChar = async function ( name, response ) {
-
     const options = {
         uri: `https://www.anime-planet.com/characters/all?name=${name.replace(/ /g, "%20")}&sort=likes&order=desc`,
         followAllRedirects: true,
