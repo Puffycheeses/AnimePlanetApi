@@ -2,7 +2,8 @@ const rp = require('request-promise');
 const cheerio = require('cheerio');
 const apParse = require('./apParse');
 
-exports.GetChar = function ( name, response ) {
+exports.GetChar = async function ( name, response ) {
+
     const options = {
         uri: `https://www.anime-planet.com/characters/all?name=${name.replace(/ /g, "%20")}&sort=likes&order=desc`,
         followAllRedirects: true,
@@ -10,6 +11,7 @@ exports.GetChar = function ( name, response ) {
             return cheerio.load(body);
         }
     };
+
     rp(options)
         .then(($) => {
             if ($("p:contains('No results found')").length > 0) return apParse.error(name, response); // Make this less toxic

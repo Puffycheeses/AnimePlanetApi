@@ -1,5 +1,4 @@
-exports.parse = function ( $, response ) {
-    console.log("Parsing");
+exports.parse = async function ( $, response ) {
     let tags = [];
     let anime = [];
     $('a[data-class="tooltip-full"]').each(function () {
@@ -22,11 +21,10 @@ exports.parse = function ( $, response ) {
         anime: anime,
         tags: tags
     });
-    console.log("Responding");
     response.end(json);
 };
 
-exports.error = function ( name, response ) {
+exports.error = async function ( name, response ) {
     let json = JSON.stringify({ // Grab elements from character page and set to json
         error: true,
         name: name,
